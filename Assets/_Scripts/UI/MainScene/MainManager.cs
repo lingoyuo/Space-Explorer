@@ -1,0 +1,33 @@
+﻿using UnityEngine;
+
+public class MainManager : MonoBehaviour
+{
+    public GameObject pausePanel; // Gán PausePanel trong Inspector
+    private bool isPaused = false;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        pausePanel.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void OpenMainMenu()
+    {
+        isPaused = true;
+        Time.timeScale = 0; // Dừng game
+        pausePanel.SetActive(true); // Hiện PausePanel
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1;
+        UnityEditor.EditorApplication.isPlaying = false; // UNITY_EDITOR
+        Application.Quit();
+    }
+}
