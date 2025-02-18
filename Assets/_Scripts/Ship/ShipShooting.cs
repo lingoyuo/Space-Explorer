@@ -5,7 +5,12 @@ public class ShipShooting : MonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.1f;
     [SerializeField] protected float shootTimer = 0f;
+    public AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Update()
     {
         IsShooting();
@@ -27,6 +32,9 @@ public class ShipShooting : MonoBehaviour
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;
         //Transform newBullet = Instantiate(bulletPrefab, spawnPos, rotation);
+
+        audioManager.PlaySFX(audioManager.lazerClip);
+
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, spawnPos, rotation);
         if (newBullet == null) return;
 

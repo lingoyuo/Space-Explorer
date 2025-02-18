@@ -45,6 +45,8 @@ public class WinManager : MonoBehaviour
 
     private void WinGame()
     {
+        if (GameTimer.Instance != null)
+            GameTimer.Instance.StopTimer();
         winPanel.SetActive(true); 
         Time.timeScale = 0f;
     }

@@ -4,6 +4,13 @@ public class JunkDamageReceiver : DamageReceiver
 {
     [Header("Junk")]
     [SerializeField] protected JunkCtrl junkCtrl;
+    public AudioManager audioManager;
+
+    protected override void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -23,6 +30,20 @@ public class JunkDamageReceiver : DamageReceiver
         {
             ShipPointReceiver.Instance.AddAsteroidDestroyed();
         }
+        OnDeadFX();
+        audioManager.PlaySFX(audioManager.meteoriteExplosionClip);
         this.junkCtrl.JunkDespawn.DespawnObject();
+    }
+
+    protected virtual void OnDeadFX()
+    {
+        string fxName = this.GetOnDeadFXName();
+        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        fxOnDead.gameObject.SetActive(true);
+    }
+
+    protected virtual string GetOnDeadFXName()
+    {
+        return FXSpawner.smoke1;
     }
 }

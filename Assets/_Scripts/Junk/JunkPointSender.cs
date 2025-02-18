@@ -3,6 +3,12 @@ using UnityEngine;
 public class JunkPointSender : PointSender
 {
     [SerializeField] protected JunkCtrl junkCtrl;
+    public AudioManager audioManager;
+
+    protected override void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     protected override void LoadComponents()
     {
@@ -22,6 +28,7 @@ public class JunkPointSender : PointSender
         base.Send(pointReceive);
         if (ShipLivesController.Instance != null) 
             ShipLivesController.Instance.RemoveLive();
+        audioManager.PlaySFX(audioManager.meteoriteExplosionClip);
         this.DestroyStar();
     }
 

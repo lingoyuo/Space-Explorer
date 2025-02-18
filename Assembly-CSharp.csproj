@@ -84,6 +84,7 @@
     <Compile Include="Assets\_Scripts\Star\StarDespawn.cs" />
     <Compile Include="Assets\_Scripts\Ship\ShipDamageReceiver.cs" />
     <Compile Include="Assets\_Scripts\EnemyShip\Spawn\EnemyShipSpawnPoints.cs" />
+    <Compile Include="Assets\_Scripts\FX\FXDespawn.cs" />
     <Compile Include="Assets\_Scripts\UI\SceneLoader.cs" />
     <Compile Include="Assets\_Scripts\EnemyShip\EnemyDespawn.cs" />
     <Compile Include="Assets\_Scripts\Spawn\SpawnPoints.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\_Scripts\GameCtrl.cs" />
     <Compile Include="Assets\_Scripts\Bullet\BulletFly.cs" />
     <Compile Include="Assets\_Scripts\Damage\PointReceiver.cs" />
+    <Compile Include="Assets\_Scripts\Audio\AudioManager.cs" />
     <Compile Include="Assets\_Scripts\Damage\PointSender.cs" />
     <Compile Include="Assets\_Scripts\EnemyShip\EnemyCtrl.cs" />
     <Compile Include="Assets\_Scripts\Junk\JunkDespawn.cs" />
@@ -112,11 +114,13 @@
     <Compile Include="Assets\_Scripts\InputManager.cs" />
     <Compile Include="Assets\_Scripts\Junk\Spawn\JunkSpawnRandom.cs" />
     <Compile Include="Assets\_Scripts\Star\Spawn\StarSpawnCtrl.cs" />
+    <Compile Include="Assets\_Scripts\Spawn\FXSpawner.cs" />
     <Compile Include="Assets\_Scripts\Despawn\DespawnByDistance.cs" />
     <Compile Include="Assets\_Scripts\Spawn\BulletSpawner.cs" />
     <Compile Include="Assets\_Scripts\Bullet\BulletImpact.cs" />
     <Compile Include="Assets\_Scripts\Star\StarPointSender.cs" />
     <Compile Include="Assets\_Scripts\Ship\ShipLivesController.cs" />
+    <Compile Include="Assets\_Scripts\Time\GameTimer.cs" />
     <Compile Include="Assets\_Scripts\MainBehavior.cs" />
     <Compile Include="Assets\_Scripts\Junk\Spawn\JunkSpawnCtrl.cs" />
     <Compile Include="Assets\_Scripts\Junk\BigSpawn\JunkBigSpawnRandom.cs" />

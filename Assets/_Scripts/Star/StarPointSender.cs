@@ -3,6 +3,12 @@ using UnityEngine;
 public class StarPointSender : PointSender
 {
     [SerializeField] protected StarCtrl starCtrl;
+    public AudioManager audioManager;
+
+    protected override void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     protected override void LoadComponents()
     {
@@ -19,6 +25,7 @@ public class StarPointSender : PointSender
     public override void Send(PointReceive pointReceive)
     {
         base.Send(pointReceive);
+        audioManager.PlaySFX(audioManager.starClip);
         this.DestroyStar();
     }
 
