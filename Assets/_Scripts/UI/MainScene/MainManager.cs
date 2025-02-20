@@ -43,7 +43,10 @@ public class MainManager : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1;
-        UnityEditor.EditorApplication.isPlaying = false; // UNITY_EDITOR
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }
