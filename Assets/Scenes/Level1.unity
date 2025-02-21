@@ -6124,12 +6124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc5c3efa97ec354fa1bd5c577b6ccf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 90
+  point: 0
   scoreText: {fileID: 382034501}
-  maxPoint: 100
+  maxPoint: 20
   blastTheAsteroidsText: {fileID: 1888764569}
-  maxAsteroids: 50
-  numberDestroyAsteroid: 40
+  maxAsteroids: 20
+  numberDestroyAsteroid: 0
 --- !u!1 &1698022643
 GameObject:
   m_ObjectHideFlags: 0

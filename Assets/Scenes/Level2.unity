@@ -4079,6 +4079,7 @@ MonoBehaviour:
   shootDelay: 0.1
   shootTimer: 0
   autoShootInterval: 1
+  audioManager: {fileID: 0}
 --- !u!1 &1050008672
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,7 +7862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disLimit: 70
   distance: 0
-  mainCam: {fileID: 0}
+  mainCam: {fileID: 273738010}
 --- !u!4 &1865342077
 Transform:
   m_ObjectHideFlags: 0
@@ -8482,12 +8483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a67a48a32a97d42b0599f001936f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: 140
+  point: 0
   scoreText: {fileID: 914501277}
-  maxPoint: 150
+  maxPoint: 30
   blastTheAsteroidsText: {fileID: 1500238847}
-  maxAsteroids: 100
-  numberDestroyAsteroid: 90
+  maxAsteroids: 30
+  numberDestroyAsteroid: 0
   blastTheBigAsteroidsText: {fileID: 1745539251}
   maxBigAsteroids: 10
   numberDestroyBigAsteroid: 0

@@ -28,6 +28,8 @@ public class ShipPointReceiveLevel2 : ShipPointReceiver
             UpdateScoreUI();
         }
 
+        if (this.point <= 0) this.point = 0;
+
         if (scoreText != null && blastTheAsteroidsText != null)
             WinManager.Instance.CheckWinConditionLevel2();
     }
@@ -59,6 +61,8 @@ public class ShipPointReceiveLevel2 : ShipPointReceiver
     {
         if (scoreText != null)
         {
+            if (this.point <= 0) this.point = 0;
+
             scoreText.text = "Score: " + this.point + "/" + maxPoint;
         }
 

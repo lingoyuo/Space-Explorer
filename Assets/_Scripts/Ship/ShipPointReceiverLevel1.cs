@@ -5,7 +5,7 @@ public class ShipPointReceiveLevel1 : ShipPointReceiver
 {
     public static ShipPointReceiveLevel1 Instance { get; private set; }
     public TextMeshProUGUI scoreText;
-    public int maxPoint = 100;  
+    public int maxPoint = 100;
     public TextMeshProUGUI blastTheAsteroidsText;
     public int maxAsteroids = 50;
     [SerializeField] public int numberDestroyAsteroid = 0;
@@ -24,6 +24,8 @@ public class ShipPointReceiveLevel1 : ShipPointReceiver
             base.AddPoint(point);
             UpdateScoreUI();
         }
+
+        if (this.point <= 0) this.point = 0;
 
         if (scoreText != null && blastTheAsteroidsText != null)
             WinManager.Instance.CheckWinCondition();
@@ -45,6 +47,8 @@ public class ShipPointReceiveLevel1 : ShipPointReceiver
     {
         if (scoreText != null)
         {
+            if (this.point <= 0) this.point = 0;
+
             scoreText.text = "Score: " + this.point + "/" + maxPoint;
         }
 

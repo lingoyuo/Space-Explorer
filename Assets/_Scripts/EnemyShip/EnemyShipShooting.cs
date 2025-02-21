@@ -7,7 +7,13 @@ public class EnemyShipShooting : MonoBehaviour
     [SerializeField] protected float shootTimer = 0f;
 
     [SerializeField] protected float autoShootInterval = 1f; 
-    private float autoShootTimer = 0f; 
+    private float autoShootTimer = 0f;
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update()
     {
@@ -26,6 +32,7 @@ public class EnemyShipShooting : MonoBehaviour
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation * Quaternion.Euler(0, 0, 90);
         //Transform newBullet = Instantiate(bulletPrefab, spawnPos, rotation);
+        audioManager.PlaySFX(audioManager.lazerClip);
         Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.bulletOne, spawnPos, rotation);
         if (newBullet == null) return;
 
